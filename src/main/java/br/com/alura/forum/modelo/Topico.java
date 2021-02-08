@@ -21,7 +21,7 @@ public class Topico {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String cursoNome;
+	private String titulo;
 	private String mensagem;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 	
@@ -33,6 +33,20 @@ public class Topico {
 	private Curso curso;
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
+
+	@Deprecated
+	public Topico() {};
+	
+	
+	
+
+	public Topico(String titulo, String mensagem, Curso curso) {
+		super();
+		this.titulo = titulo;
+		this.mensagem = mensagem;
+		this.curso = curso;
+	}
+
 
 
 
@@ -70,11 +84,11 @@ public class Topico {
 	}
 
 	public String getcursoNome() {
-		return cursoNome;
+		return titulo;
 	}
 
 	public void setcursoNome(String cursoNome) {
-		this.cursoNome = cursoNome;
+		this.titulo = cursoNome;
 	}
 
 	public String getMensagem() {
