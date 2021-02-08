@@ -40,6 +40,13 @@ public class Topico {
 	
 	
 
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+
+
+
 	public Topico(String titulo, String mensagem, Curso curso) {
 		super();
 		this.titulo = titulo;
